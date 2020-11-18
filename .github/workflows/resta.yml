@@ -1,0 +1,32 @@
+# Resta Git action basic example
+name: Resta Basic Push Example
+
+# events set only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  resta-push:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: push Resta file to Resta server
+      run: |
+        echo "Copy resta json file into environment variable";
+        restaJson=$( cat resta.json );
+        echo "push the resta file into Resta server";
+        response=$(curl -X PATCH -H "Content-Type: application/json" -d "$restaJson" http://dashboard.resta.io/api/services/public/update/${{ secrets.SERVICE_UNIQUE_KEY }}/${{ secrets.SERVICE_ID }}/${GITHUB_REF#refs/heads/});
+        if [[ $response -eq "OK" ]]
+        then
+            echo "Resta file was updated successfully";
+        else
+            echo "Resta push failed";
+            echo $response;
+            exit 1;
+        fi
