@@ -2,5 +2,9 @@
   "name": "public-test-3",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@resta/resta-sdk": "0.1.4",
+    "express": "^4.17.1"
+  }
 }
