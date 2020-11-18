@@ -21,7 +21,7 @@ jobs:
         echo "Copy resta json file into environment variable";
         restaJson=$( cat resta.json );
         echo "push the resta file into Resta server";
-        response=$(curl -X PATCH -H "Content-Type: application/json" -d "$restaJson" http://dashboard.resta.io/api/services/public/update/${{ secrets.SERVICE_UNIQUE_KEY }}/${{ secrets.SERVICE_ID }}/${GITHUB_REF#refs/heads/});
+        response=$(curl -X PATCH -H "Content-Type: application/json" -d "$restaJson" https://dashboard.resta.io/api/services/public/update/${{ secrets.SERVICE_UNIQUE_KEY }}/${{ secrets.SERVICE_ID }}/${GITHUB_REF#refs/heads/});
         if [[ $response -eq "OK" ]]
         then
             echo "Resta file was updated successfully";
