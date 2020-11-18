@@ -35,8 +35,11 @@ const schema1 = {
 }
 
 
-app.get('/one', httpContract(schema1), (req, res) => {
-  res.send(200)
+app.get('/person', httpContract(schema1), (req, res) => {
+  res.send({
+    name: 'omri',
+    age: 29
+  })
 })
 
 
