@@ -2,7 +2,7 @@
     "resta": "1.0.0-beta",
     "groups": [],
     "routes": {
-        "/v1/date": {
+        "/v2/users": {
             "get": {
                 "groups": [],
                 "description": "basic route",
@@ -13,9 +13,12 @@
                     null
                 ],
                 "responses": {
-                    "200": {
-                        "date": "2020-11-18T19:03:17.080Z"
-                    }
+                    "200": [
+                       "user1",
+                       "user2",
+                       "user3",
+                       "user4",
+                    ]
                 }
             }
         }
