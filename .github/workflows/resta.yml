@@ -4,7 +4,7 @@ name: Resta Basic Push Example
 # events set only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ master, v1, v2 ]
 
 jobs:
   resta-push:
