@@ -2,7 +2,7 @@
     "resta": "1.0.0-beta",
     "groups": [],
     "routes": {
-        "/users": {
+        "/v1/date": {
             "get": {
                 "groups": [],
                 "description": "basic route",
@@ -15,32 +15,6 @@
                 "responses": {
                     "200": {
                         "date": "2020-11-18T19:03:17.080Z"
-                    }
-                }
-            }
-        },
-        "/person": {
-            "get": {
-                "groups": [],
-                "description": "basic route",
-                "schemaId": "2",
-                "lastCommitted": "2020-11-18T19:32:28.086Z",
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": "string",
-                        "required": true,
-                        "example": "omri",
-                        "in": "query"
-                    }
-                ],
-                "headers": [
-                    null
-                ],
-                "responses": {
-                    "200": {
-                        "name": "omri",
-                        "age": 29
                     }
                 }
             }
