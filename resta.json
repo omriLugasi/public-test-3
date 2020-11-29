@@ -2,7 +2,7 @@
     "resta": "1.0.0-beta",
     "groups": [],
     "routes": {
-        "/dor-adn-rion": {
+        "/users": {
             "get": {
                 "groups": [],
                 "description": "basic route",
